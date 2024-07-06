@@ -6,6 +6,12 @@ body {
   background-color: #081C29;
 }
 
+img {
+  max-width: 30%;
+  height: auto;
+}
+
+
 .navbar {
   background-color: #081C29;
   display: flex;
@@ -64,6 +70,10 @@ input[type=checkbox] {
   display: flex;
   width: 80%;
   justify-content: space-around;
+}
+
+#profilepic {
+  width: 100px;
 }
 
 .intro-button {
