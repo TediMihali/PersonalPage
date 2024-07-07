@@ -4,13 +4,26 @@ body {
   box-sizing: border-box;
   color: white;
   background-color: #081C29;
+  
 }
 
-img {
-  max-width: 30%;
-  height: auto;
+a:link { 
+  text-decoration: none; 
+} 
+a:visited { 
+  text-decoration: none; 
+} 
+a:hover { 
+  text-decoration: none; 
+} 
+a:active { 
+  text-decoration: none; 
 }
 
+.text {  /* Formatting for all the text in the page */
+  font-size: 1.5rem;
+  text-align: center;
+}
 
 .navbar {
   background-color: #081C29;
@@ -25,6 +38,10 @@ img {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 2rem;
+}
+
+.dropdown {
+  display: none;
 }
 
 input[type=checkbox] {
@@ -42,6 +59,11 @@ input[type=checkbox] {
   align-items: center;
 }
 
+.left-items a:hover {
+  background-color: #4c9e9e;
+  transition: 0.3s ease;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -55,42 +77,212 @@ input[type=checkbox] {
   margin: 10% 0;
 }
 
+
 .text-intro {
   display: flex;
-  width: 30%;
+  width: 40%;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.intro-text {
-  font-size: 32px;
+.photo {
+width:40%;
 }
+
+
 
 .buttons {
   display: flex;
   width: 80%;
   justify-content: space-around;
+  
 }
 
 #profilepic {
-  width: 100px;
+  width: 100%;
 }
 
-.intro-button {
+#intro-button {
   padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
-.intro-button:hover {
-  background-color: #4c9e9e; /* Change background color on hover */
-  color: #ffffff; /* Change text color on hover */
+#intro-button:hover {
+  background-color: #4c9e9e; 
+  color: #ffffff; 
 }
 
 hr#horizontal-line {
-  border: 5px solid white;
-  width: 90%;
+  border: 0.5px solid white;
+  width: 95%;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-text {
+  width:90%;
+}
+
+.contact {
+  width:90%;
+}
+
+
+#icon-div {
+width:5vw;
+display:flex;
+justify-content: center;
+align-items: center;
+}
+
+#icon {
+  width: 2vw;
+  height: auto;
+}
+
+.contact-row {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+form {
+  width: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2vh;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.send-button {
+  color:white;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin:auto;
+  margin-bottom: 5vh;
+  background-color: #081C29;
+}
+
+.send-button:hover {
+  background-color: #4c9e9e; 
+  color: #ffffff; 
+}
+
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.slideshow-container {
+  max-width: 80%;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.big {
+  font-size: 3rem;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 @media (max-width: 768px) {
+  
+ 
 
   .navbar {
     display: block;
@@ -115,12 +307,12 @@ hr#horizontal-line {
 
   .left-items a {
     display: block;
-    margin: auto;
+    width:100%;
+    margin: 0;
   }
 
-  .left-items a:hover {
-    background-color: #4c9e9e;
-    transition: 0.3s ease;
+  .dropdown {
+    display: flex;
   }
 
   .first-row .dropdown input[type=checkbox]:checked ~ .left-items {
@@ -133,5 +325,14 @@ hr#horizontal-line {
     font-size: 2rem;
     color: #f2f2f2;
     padding: 14px 16px;
+  }
+
+  .intro {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo {
+    margin-top: 10vh;
   }
 }

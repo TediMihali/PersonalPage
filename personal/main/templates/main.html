@@ -14,18 +14,18 @@
             <a class="active" href="#home">Tedi</a>
 
             <div class="dropdown">
-                <input type="checkbox" id="checkbox_toggle" />
+                <input type="checkbox" id="checkbox_toggle"/>
                 <label for="checkbox_toggle" class="hamburger">&#9776;</label>
             </div>
                 
         </div>
         
         <div class="left-items">
-            <a href="#news">Home</a>
-            <a href="#contact">About</a>
-            <a href="#about">Services</a>
-            <a href="#contact">Portfolio</a>
-            <a href="#about">About</a>
+            <a id="nav-element" href="#news">Home</a>
+            <a id="nav-element" href="#contact">About</a>
+            <a id="nav-element" href="#about">Services</a>
+            <a id="nav-element" href="#contact">Portfolio</a>
+            <a id="nav-element"href="#about">About</a>
         </div>
     </div>
       
@@ -36,8 +36,8 @@
             <div class="text-intro">
 
                 <div class="short-intro">
-                    <p class="intro-text">Hello, I am Tedi Mihali</p>
-                    <p class="intro-text">I am a software developer and electronics enthusiast</p>
+                    <p class="text">Hello, I am Tedi Mihali</p>
+                    <p class="text">I am a software developer and electronics enthusiast</p>
                 </div>
 
                 <div class="buttons">
@@ -47,16 +47,130 @@
             </div>
 
             <div class="photo">
-                <img id="profilepic" src="{% static "media/profilepic.png" %}" alt="profile photo" >
+                <img id="profilepic" src='{% static "media/profilepic.png" %}'' alt="profile photo" >
             </div>
         </div>
 
         <hr id="horizontal-line">
+        
+        <h1 class="text big">My Portfolio</h1>
+        <div class="slideshow-container">
 
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="{% static 'media/carrental.png' %}" style="width:100%">
+              <div class="text">Car Rental</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="{% static 'email.png' %}" style="width:100%">
+              <div class="text">Caption Two</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <img src="{% static 'phone.png' %}" style="width:100%">
+              <div class="text">Caption Three</div>
+            </div>
+          
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+          
+        <hr id="horizontal-line">
+
+        <div class="about">
+
+            <div class="about-text">
+                
+                    <p class="text about-text">Hello! I'm Tedi Mihali, a recent high school graduate with a strong focus on electronics and IT. I've completed a comprehensive Python course at SDA Academy, which has significantly boosted my skills to a junior full-stack developer level.</p>
+                    <p class="text about-text">My education at the Harry Fultz Institute provided me with a solid foundation in electronics and IT, achieving an average mark of 9.77. I've also completed additional courses on Udemy, including a Django Masterclass and Machine Learning A-Z.</p>
+                    <p class="text about-text">I am proficient in C++, Java, Python, HTML/CSS, and JavaScript, with experience in MySQL, Git, GitHub, and GitLab. I have practical experience from my involvement with the Harry Fultz Institute Robotics Club, where I led the team and programmed robots using Arduino.</p>
+                    <p class="text about-text">My passion for mathematics and physics has driven me to excel in various competitions, earning 1st Prize in the National Physics Olympiad and 3rd Prize in the National Informatics Olympiad in 2023. I am fluent in English and Italian, with basic proficiency in German.</p>
+                    <p class="text about-text">I am excited to pursue a Bachelor of Science in Electronics Engineering at the Polytechnic of Milan, anticipating graduation in 2027. Feel free to explore my portfolio to see my projects. Contact me at tedimihali1@gmail.com. I'm eager to continue growing as a developer and look forward to the future.</p>
+            
+            </div>
+
+        </div>
+
+        <hr id="horizontal-line">
+
+        <div class="contact">
+
+            <div class="contact-info">
+                
+                <div class="contact-row">
+                    <div id="icon-div">
+                        <img id="icon" src="{% static 'media/phone.png' %}" alt="phone number">
+                    </div>
+                    <p class="text contact-text"> Phone Number: <span>+355685071059</span> </p>
+                </div>
+                    
+                <div class="contact-row">
+                    <div id="icon-div">
+                        <img id="icon" src="{% static 'media/linkedin.png' %}" alt="linkedin">
+                    </div>
+                    <p class="text contact-text"> LinkedIn: <a href="https://www.linkedin.com/in/tedi-mihali-051726246/" target="_blank">Tedi Mihali</a> </p>
+                </div>
+                    
+                <div class="contact-row">  
+                    <div id='icon-div'>
+                        <img id="icon" src="{% static 'media/email.png' %}" alt="email">
+                    </div>
+                    <p class="text contact-text"> Email: <span>tedimihali1@gmail.com</span> </p>
+                </div>
+                   
+            </div>
+
+                    <p class="text contact-text">Or send me an email</p>
+
+            <div class="contact-form">
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <label for="name">Full Name: </label>
+                        <input type="text" name="name" id="name">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="name">Email: </label>
+                        <input type="email" name="email" id="email">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="name">Subject </label>
+                        <input type="text" name="subject" id="subject">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="name">Message: </label>
+                        <textarea name="message" id="area"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <button type="submit" class="send-button" >Send</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+        </div>
     </div>
 
 
 
     <script src="{% static 'javascript/main.js'%}"></script>
+    
 </body>
 </html>
